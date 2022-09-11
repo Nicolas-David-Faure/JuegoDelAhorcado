@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego del ahorcado</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+                            <!-- Juego del ahocado-->
+ 
+    <main class="contenedor">
+        <header class="header__contenedor">
+            <div class="header__contenedor-1">
+                <div class="logo-contenedor"></div>
+            </div>
+            <div class="header__contenedor-2">
+                <h1 class="header_h1"></h1>
+            </div>
+            
+        </header>
+                <section id="contenedor_principal" class="contenedor_principal">
+                    <div onclick="mostrarMusica()" id="contenedor_logo_musica" class="contenedor_logo_musica">
+                        <img src="./img/music.svg" class="icono-music" />
+                    </div>
+                    <span id="contenedor_span_musica" class="contenedor_span_musica">
+                        <div id="contenedor_musica_principal" class="contenedor_musica_principal">
+                            <div id="contenedor-canciones-separador" class="contenedor-volumen">
+                                <p class="nombre-de-cancion" >Volumen general</p>
+                                 <input class="volume" type="range" min="0" max="1" step="0.1">
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion">Bill Evans Waltz for Debb</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="BillEvansWaltzforDebb" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Dave Brubeck Take Fiv</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="Dave Brubeck   Take Fiv" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Jazz Club - Kriss</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="JazzClub-Kriss" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Gee Electroswing - Revival</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="GeeElectroswing-Revival" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Jamie Berry - Sweet Rascal Electro Swing</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="JamieBerrySweetRascalElectroSwing" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Horace Silver - Song for My Father</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="Horace Silver   Song for My Father (Original) HQ 196" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Unused Shop Loop - Steven O'Brien</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="UnusedShopLoop-StevenOBrien" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion" >Lee Morgan - The Sidewinde</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="Lee Morgan   The Sidewinde" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            <div id="contenedor-canciones-separador" class="">
+                                <p class="nombre-de-cancion">Miles Davis-Flamenco Sketche</p>
+                                <div class="contenedor-iconos-canciones" >
+                                    <img id="Miles Davis   Flamenco Sketche" class="play" src="./img/icon-music/play-circle.svg">
+                                    <img class="pause" src="./img/icon-music/pause.svg">
+
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </span>
+                    <button onclick="cambiarJuegoIniciado(),volverAjugar()" class="boton iniciar " id="boton_iniciar">Iniciar Juego</button>
+                    <button onclick="agregarPalabras()" class="boton agregar " id="boton_agregar">Agregar Palabras</button>
+                                        <!--Juego-->
+                    <div id="contenedor__juego" class="contenedor__juego">
+                            <span id="error_caracter-invalido" class="contenedor-caracter_invalido">
+                                <div class="imagen-caracter-invalido_cont">
+                                <div class="contenedor-img-X"><img onclick="cerrarError()" id="x-img" class="x-img" src="./img/X.svg"></div>
+                                <div class="contenedor-caracter_invalido_cont-p">
+                                    <img class="img-error-num" src="./img/error.svg"><p class="contenedor-caracter_invalido-p">¡No se permiten símbolos ni números!</p><img class="img-error-num" src="./img/error.svg">
+                                </div>
+                            </div>
+                            </span>
+                        <span id="Span_GANASTE" class="Span_GANASTE_desactivado">
+                            <div class="Span_GANASTE_conteiner">
+                                <div id="contenedor_mensaje_Ganador" class="contenedor_mensaje_Ganador">
+
+                                </div>
+                                <div class="botones_ganaste-perdiste_cont" >
+                                    <button onclick="volverAjugar(),cerrarVentana(),palabraAleatoria(palabrasArray)" id="botones_Ganaste_perdiste" class="botones_Ganaste_perdiste volver_a_jugar">Volver a jugar</button>
+                                    <button onclick="volverAlInicio(),cerrarVentana(),palabraAleatoria(palabrasArray)" class="botones_Ganaste_perdiste volver_al_inicio">Volver al inicio</button>
+                                </div>
+                            </div>
+                        </span>
+                        <span id="Span_PERDISTE" class="Span_GANASTE_desactivado">
+                            <div class="Span_PERDISTE_container">
+                                <div id="contenedor_mensaje_Perdedor" class="contenedor_mensaje_Perdedor"></div>
+                                <div class="botones_ganaste-perdiste_cont">
+                                    <button onclick="volverAjugar(),cerrarVentana(),palabraAleatoria(palabrasArray)" id="botones_Gan_perdiste" class="botones_Ganaste_perdiste volver_a_jugar">Volver a jugar</button>
+                                    <button onclick="volverAlInicio(),cerrarVentana(),palabraAleatoria(palabrasArray)" class="botones_Ganaste_perdiste volver_al_inicio">Volver al inicio</button>
+                                </div>
+                                
+                            </div>
+                        </span>
+                            <canvas id="canvas_pantalla"  class="canvas_pantalla" ></canvas>
+                            <div class="contenedor__juego_input_letra">
+                                <input maxlength="1" placeholder="?" class="input_juego_letra" id="input_letra_a_comparar">
+                                <div id="contenedor_letras_de_palabra_aleatoria" >
+
+                                </div>
+                                <div id="contenedor_letras_erradas" class="contenedor_letras_erradas">
+                                    <p class="letras_erradas_p">Letras Erradas:</p>
+                                    <br>
+                                </div>
+                                <div id="contenedor_del_teclado" class="contenedor_contenedor_letras_tecladoDesactivado tecladoOp">
+                                    <div class="contenedor_letras_teclado">
+                                        <span onclick="apretasteTecla('Q'),sendValue()" id="letras_teclado_Q" class="letras_teclado">Q</span>
+                                        <span onclick="apretasteTecla('W'),sendValue()" id="letras_teclado_W" class="letras_teclado">W</span>
+                                        <span onclick="apretasteTecla('E'),sendValue()" id="letras_teclado_E" class="letras_teclado">E</span>
+                                        <span onclick="apretasteTecla('R'),sendValue()" id="letras_teclado_R" class="letras_teclado">R</span>
+                                        <span onclick="apretasteTecla('T'),sendValue()" id="letras_teclado_T" class="letras_teclado">T</span>
+                                        <span onclick="apretasteTecla('Y'),sendValue()" id="letras_teclado_Y" class="letras_teclado">Y</span>
+                                        <span onclick="apretasteTecla('U'),sendValue()" id="letras_teclado_U" class="letras_teclado">U</span>
+                                        <span onclick="apretasteTecla('I'),sendValue()" id="letras_teclado_I" class="letras_teclado">I</span>
+                                        <span onclick="apretasteTecla('O'),sendValue()" id="letras_teclado_O" class="letras_teclado">O</span>
+                                        <span onclick="apretasteTecla('P'),sendValue()" id="letras_teclado_P" class="letras_teclado">P</span>
+                                    </div>
+                                    <div class="contenedor_letras_teclado">
+                                        <span onclick="apretasteTecla('A'),sendValue()" id="letras_teclado_A" class="letras_teclado">A</span>
+                                        <span onclick="apretasteTecla('S'),sendValue()" id="letras_teclado_S" class="letras_teclado">S</span>
+                                        <span onclick="apretasteTecla('D'),sendValue()" id="letras_teclado_D" class="letras_teclado">D</span>
+                                        <span onclick="apretasteTecla('F'),sendValue()" id="letras_teclado_F" class="letras_teclado">F</span>
+                                        <span onclick="apretasteTecla('G'),sendValue()" id="letras_teclado_G" class="letras_teclado">G</span>
+                                        <span onclick="apretasteTecla('H'),sendValue()" id="letras_teclado_H" class="letras_teclado">H</span>
+                                        <span onclick="apretasteTecla('J'),sendValue()" id="letras_teclado_J" class="letras_teclado">J</span>
+                                        <span onclick="apretasteTecla('K'),sendValue()" id="letras_teclado_K" class="letras_teclado">K</span>
+                                        <span onclick="apretasteTecla('L'),sendValue()" id="letras_teclado_L" class="letras_teclado">L</span>
+                                        <span onclick="apretasteTecla('Ñ'),sendValue()" id="letras_teclado_Ñ" class="letras_teclado">Ñ</span>
+                                    </div>
+                                    <div class="contenedor_letras_teclado">
+                                        <span onclick="apretasteTecla('Z'),sendValue()" id="letras_teclado_Z" class="letras_teclado">Z</span>
+                                        <span onclick="apretasteTecla('X'),sendValue()" id="letras_teclado_X" class="letras_teclado">X</span>
+                                        <span onclick="apretasteTecla('C'),sendValue()" id="letras_teclado_C" class="letras_teclado">C</span>
+                                        <span onclick="apretasteTecla('V'),sendValue()" id="letras_teclado_V" class="letras_teclado">V</span>
+                                        <span onclick="apretasteTecla('B'),sendValue()" id="letras_teclado_B" class="letras_teclado">B</span>
+                                        <span onclick="apretasteTecla('N'),sendValue()" id="letras_teclado_N" class="letras_teclado">N</span>
+                                        <span onclick="apretasteTecla('M'),sendValue()" id="letras_teclado_M" class="letras_teclado">M</span>
+                                    </div>
+                                    
+                                
+                                </div>
+                            </div>
+                            <!--Letras a Adivinadas-->
+
+                            <div class="contenedor_adivinanza">
+                                <div class="contenedor_adivinanza_icono-teclado">
+                                    <img onclick="mostrarTeclado()" id="teclado_intercalable" class="icono-teclado" src="./img/teclado.svg">
+                                </div>
+                                
+                            </div>
+                            
+                        <div class="contenedor_botones_juego">
+                            <div class="contenedor_botones_juego_2">
+                                <button onclick="palabraAleatoria(palabrasArray), volverAjugar()" class="boton_volverAJugar"><img src="./img/game.svg">Volver a jugar</button>
+                                 <button onclick="desistir()" class="boton_desistir">Desistir<img src="./img/flag.svg"></button>
+                            </div>
+                            
+                            <button onclick="volverAlInicio()" id="boton_volver" class="boton_volver"><img src="./img/casita.svg"> Inicio <img src="./img/casita.svg"></button>
+                        </div>
+                            
+                    </div>
+                                                        <!--Ingresa las palabras-->
+                    <div id="contenedor__agregar_palabra" class="contenedor__agregar_palabra">
+                        <span id="mensaje_De_Alerta" class="alerta_mensaje_desactivado">
+                            <div class="alerta_mensaje_contenedor">
+                                <p class="alerta_mensaje_p"><img class="img_span" src="./img/error.svg">Tu palabra no cumple con los requisitos</p>
+                            </div>
+                            <button onclick="mostrarErrorAceptar()" class="boton_error">Aceptar</button>
+                        </span>
+                        <h2 class="h2_agregar_palabras">INGRESA LAS PALABRAS</h2>
+                                                    <!--INPUT AGREGAR-->
+                        <div   id="formulario">
+                        <input id="input_ingresar_palabras" placeholder="Escribe aquí" class="input_ingresar_palabras" type="text">
+                    <div class="cont_ingresar_palabra_p">
+                        <p class="ingresar_palabra_p"><img class="img_p" src="./img/peligro.svg">Tu palabra debe tener 3 letras como mínimo y un máximo de 8 letras</p>
+                        <p class="ingresar_palabra_p"><img class="img_p" src="./img/peligro.svg">No se permiten caracteres especiales, números, tildes o espacios</p>
+                    </div>
+                    </div>
+                        <div class="contenedor__agregar_palabra_botones">
+                                                 <!--Boton añadir-->
+                            <button onclick="agregaUnaPalabraNueva()" id="boton_anhadir_nueva_palabra" class="boton_anhadir">
+                                <img class="iconos-svg" src="./img/plus.svg"/>
+                                    <span class="span_anhadir">
+                                        Añadir
+                                    </span>
+                            </button>
+                                                <!--Boton jugar-->
+                            <button onclick="cambiarJuegoIniciado(),volverAjugar()" class="boton_jugar">
+                                <span class="span_jugar">
+                                    Jugar
+                                </span>
+                                    <img class="iconos-svg" src="./img/play-icon.svg"/>
+                            </button>
+                        </div> 
+                        <div>
+                                            <!--Boton jugar-->
+                            <button onclick="volverAlInicio2()" id="boton_volver2" class="boton_volver">
+                                <img class="iconos-sv" src="./img/volver.svg"/>
+                                    <span class="span_volver">
+                                        Volver
+                                    </span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+    </main>
+    <div class="footer_contenedor">
+        <div class="footer_contenedor_p">
+            <span id="contenedor_mail_mensaje" class="contenedor_mail">
+                <div class="contenedor_mail_h2">
+                    <h2 class="h2_mail">faureee89@gmail.com</h2>
+                </div>
+            </span>
+            <p class="footer_p">Creado por  
+             <a class="link_span" target="_blank" href="https://www.instagram.com/nicolasfaure1/">
+                <span class="footer_span">N</span>
+                <span class="footer_span">i</span>
+                <span class="footer_span">c</span>
+                <span class="footer_span">o</span>
+                <span class="footer_span">l</span>
+                <span class="footer_span">á</span>
+                <span class="footer_span">s</span> 
+            </a>
+            <a class="link_span" target="_blank" href="https://www.facebook.com/faureee/">
+                <span class="footer_span_point">.</span>
+                <span class="footer_span">F</span>
+                <span class="footer_span">a</span>
+                <span class="footer_span">u</span>
+                <span class="footer_span">r</span>
+                <span class="footer_span">e</span>
+            </a>
+           </p>
+           <div class="social_contenedor">
+            <a href="https://github.com/Nicolas-David-Faure" target="_blank"><img class="logo_social git" src="./img/logo-git.svg"></a>
+            <a href="https://www.linkedin.com/in/nicol%C3%A1s-david-faure-b023ba240/" target="_blank"><img class="logo_social linkdin" src="./img/logo-linkedin.svg"></a>
+            <img class="logo_social mail" onclick="clickSobreElmail()" id="logo_Email" src="./img/logo-mail.svg">
+           </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

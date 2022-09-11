@@ -1,0 +1,1015 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@200&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    background-color: #d1e1f4;
+}
+/*main*/
+
+/*Musica*/
+.contenedor_logo_musica{
+   position: absolute;
+    top: 100px;
+    left: 80%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #152943;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: .3s ease all;
+    border: 1px solid white;
+    z-index: 5;
+}
+.contenedor_logo_musica:hover{
+    box-shadow:2px 2px 20px white;
+}
+.icono-music{ 
+    border-radius: 50%;
+    width: 40px;
+}
+/*Contenedor musica*/
+.contenedor_span_musica{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    transition: .6s ease all;
+    visibility: hidden;
+    opacity: 0;
+    
+}
+
+.contenedor_musica_principal{
+    background-color: #0d233f;
+    width: 300px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    overflow-y: scroll;
+    transition: .6s ease all;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 10px;
+    box-shadow: 2px 2px 20px 20px rgba(255, 255, 255, 0.337);
+}
+
+.contenedor_musica_principal::-webkit-scrollbar {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+.contenedor_musica_principal::-webkit-scrollbar:vertical {
+    width: 7px;
+    cursor: pointer;
+}
+.contenedor_musica_principal::-webkit-scrollbar-button:increment,.section__info_cont::-webkit-scrollbar-button {
+    display: none;
+} 
+.contenedor_musica_principal::-webkit-scrollbar-thumb {
+    background-color: #e6d3d3;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.contenedor_musica_principal::-webkit-scrollbar-track {
+    border-radius: 10px;  
+    cursor: pointer;
+}
+.contenedor_span_musica_Activado{
+   transition: .5 ease all;
+    opacity: 1;
+    visibility: visible;
+}
+/*contenedor canciones separador*/
+#contenedor-canciones-separador{
+    width: 100%;
+    max-width: 100%;
+    height: 5rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nombre-de-cancion{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.play,.pause{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 50%;
+    transition: .3s ease all;
+}
+.pause:hover{
+    background-color: #304a6c;
+    box-shadow: 2px 2px 15px white;
+}
+.play:hover{
+    background-color: #304a6c;
+    box-shadow: 2px 2px 15px white;
+}
+.contenedor-iconos-canciones{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.contenedor{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+/*header*/
+.logo-contenedor{
+    background-image: url(./img/logoAlura.png);
+    width: 90px;
+    height: 90px;
+    background-size: cover;
+}
+.header__contenedor{
+    display: flex;
+    align-items: center;
+    
+    background-color:#2b7be4;
+    width: 100%;
+    height: 90px;
+}
+.header__contenedor-1{
+    width: 30%;
+
+}
+.header__contenedor-2{
+    width: 70%;
+}
+.header_h1{
+    font-weight: 600;
+}
+
+                        /*PRINCIPAL*/
+.contenedor_principal{
+    width: 100%;
+    height:100vh ;
+    display: flex;                         
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(./img/fondo.jpg);
+    background-size: cover;
+}
+.boton_displayNone{
+    display: none;
+}
+
+.boton {
+                          /*Quitar display none al terminar*/
+
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    height: 50px;
+    background-color: rgb(116, 129, 215);
+    font-size: 17px;
+    border: 1px solid rgb(98, 95, 43);
+    box-shadow: 2px 2px 7px black ;
+    transition: .5s background-color;
+    cursor: pointer;
+    user-select: none;
+}
+.iniciar{
+    margin-bottom: 10px;
+}
+.agregar{
+    margin-top: 10px ;
+}
+.agregar:hover{
+    background-color: rgb(75, 202, 166);
+}
+.iniciar:hover{
+    background-color: rgb(223, 23, 23);
+}
+
+
+/*Iniciar juego*/
+
+.contenedor__juego{                      /*Poner display none al terminar*/
+    display: none;
+   
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+   
+    background-color: rgb(231, 89, 89);
+}
+
+
+.contenedor_juegoActivo{
+    display: flex;
+   
+    
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url(./img/fondo.jpg);
+    background-size: cover;
+
+}
+
+
+.contenedor_botones_juego{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contenedor_botones_juego_2{
+    display: flex;
+    flex-direction: row;
+}
+.boton_volverAJugar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    background-color: #7d4a13;
+    border: 1px solid black;
+    border-radius: 5px 0px 0 5px;
+    transition: .5s background-color;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px black;
+    font-size: 17px;
+    font-weight: 600;
+}
+.boton_desistir{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: rgb(145, 17, 17);
+    border: 1px solid black;
+    border-radius: 0 5px 5px 0; 
+    transition: .5s background-color;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 5px black;
+}
+.boton_volverAJugar:hover{
+    background-color: rgb(229, 202, 26);
+}
+.boton_desistir:hover{
+    background-color: rgb(194, 82, 82);
+}
+
+
+/*Agregar palabra*/
+.contenedor__agregar_palabra{
+    
+    display: none;
+}
+.contenedor__agregar_palabraActivo{
+    width: 100%;
+    height: 100vh;
+    background: rgb(20,123,190);
+    background: linear-gradient(0deg, rgba(20,123,190,1) 0%, rgba(81,83,255,1) 46%, rgba(255,0,26,0.9220063025210083) 95%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+.contenedor__agregar_palabra_botones{
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/*Boton volver*/
+.boton_volver{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
+    height: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 5px;
+    background-color: #16c5b7be;
+    border: 1px solid rgb(98, 95, 43);
+    transition: .5s background-color;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px black ;
+    user-select: none;
+}
+
+/*Contenedor agregar palabra*/
+.h2_agregar_palabras{
+    border-radius: 2px;
+    margin-top: 7px;
+    color: #000000ba;
+    text-decoration: underline;
+    font-style: italic;
+}
+.input_ingresar_palabras{
+    margin-top: 10px;
+    background-color: #d1e1f46f;
+    border: 0;
+    font-size: 25px;
+    outline: none;
+    padding: 80px 100px;
+    border-radius: 5px;
+    text-align: center;
+    color: #000;
+    box-shadow: 2px 2px 7px black ;
+}
+.boton_anhadir{
+    width: 100px;
+    height: 40px;
+    font-weight: 600;
+    border-radius: 5px 0px 0 5px;
+    background-color: #56e42bbc;
+    border: 1px solid rgb(98, 95, 43);
+    transition: .5s background-color;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px black ;
+    user-select: none;
+}
+
+.boton_jugar{
+    width: 100px;
+    font-weight: 600;
+    height: 40px;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #d16e27bc;
+    border: 1px solid rgb(98, 95, 43);
+    transition: .5s background-color;
+    cursor: pointer;
+    box-shadow: 2px 2px 7px black ;
+    user-select: none;
+    
+}
+.boton_anhadir:hover{
+    background-color: #e6c2a4;
+}
+.boton_jugar:hover{
+    background-color: rgb(232, 143, 143);
+}
+.boton_volver:hover{
+    background-color:rgba(166, 242, 226, 0.879) ;
+}
+.span_anhadir{
+    position: relative;
+    top: -4px;
+    font-size: 15px;
+}
+.span_jugar{
+    position: relative;
+    top: -4px;
+    font-size: 15px;
+}
+
+
+.iconos-svg{
+    position: relative;
+    top: 3px;
+}
+.ingresar_palabra_p{
+    font-size: 15px;
+}
+.img_p{
+    position: relative;
+    width: 20px;
+    top: 4px;
+}
+
+/*MENSAJE DE ERROR*/
+.alerta_mensaje_desactivado{
+    display: none;
+}
+.alerta_mensaje{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.631);
+}
+.alerta_mensaje_p{
+    user-select: none;
+}
+.alerta_mensaje_contenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 100px;
+    background-color: rgba(255, 255, 255, 0.629);
+    border-radius: 5px;
+    box-shadow: 2px 2px 20px #ffffff;
+}
+.img_span{
+    position: relative;
+    top: 5px;
+}
+.boton_error{
+    margin-top: 10px;
+    width: 100px;
+    height: 50px;
+    background-color: rgb(101, 237, 146);
+    border-radius: 5px;
+    box-shadow: 2px 2px 21px white;
+    border: 1px solid rgb(228, 175, 175);
+    transition: .5s background-color;
+    cursor: pointer;
+    user-select: none;
+}
+.boton_error:hover{
+    background-color: rgb(72, 128, 91);
+    
+}
+.canvas_pantalla{
+    width:600px;
+     height:400px;
+     border-radius: 5px;
+    
+}
+.contenedor_adivinanza{
+    width: 600px;
+    
+}
+.contenedor_adivinanza_icono-teclado{
+    width: 100%;
+
+}
+
+.icono-teclado{
+   float: right;
+    width: 45px;
+    height: 40px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: .5s background-color;
+    transition: .5s box-shadow;
+    border-radius:5px;
+    user-select: none;
+    background-color: #0d233f;;
+    box-shadow: 2px 2px 2px black;
+    border: 1px solid white;
+}
+
+.letras_erradas_p{
+    font-size: 20px;
+    
+}
+.icono-teclado:hover{
+    background-color: rgba(52, 68, 141, 0.739);
+    box-shadow: 2px 2px 15px rgb(255, 255, 255);
+}
+.contenedor_contenedor_letras_tecladoDesactivado{
+    visibility: hidden;
+    transition: .5s ease all;
+    
+}
+.contenedor_contenedor_letras_teclado{
+    color:rgba(136, 214, 248, 0.847);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 80%;
+    background-color: #5755db47;
+    border-radius: 30px;
+    visibility: visible;
+    transition: 1s ease all;
+    opacity: 0;
+}
+.contenedor_letras_teclado{
+    margin-top: 10px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.letras_teclado{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(150, 59, 59);
+    width: 30px;
+    height: 40px;
+    margin-left:  2px;
+    margin-right: 2px;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px black;
+    transition: .3s background-color;
+}
+.letras_teclado:hover{
+    background-color: rgb(182, 135, 135);
+}
+.contenedor__juego_input_letra{
+    width: 600px;
+    max-height: 600px;
+    background-color: #2b7be400;
+}
+.input_juego_letra{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.023);
+    color:white ;
+    font-size: 25px;
+    border: 1px solid rgb(203, 54, 54);
+    outline: #2b7be4;
+    cursor: pointer;
+    transition: .5s box-shadow;
+}
+.input_juego_letra:hover{
+    box-shadow: 2px 2px 20px white;
+}
+.letra_a_adivinar{
+    background-color: rgba(0, 0, 0, 0.24);
+    margin-left: 2px;
+    margin-right: 2px;
+    width: 40px;
+    display: inline-block;
+    text-align: center;
+    border-bottom: 2px solid black;
+   
+}
+#contenedor_letras_de_palabra_aleatoria{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    max-height: 47px;
+    
+}
+.letra_a_adivinar_p{
+font-size: 30px;
+display: none;
+}
+.letra_a_adivinar_p_Activo{
+    display: inline;
+    font-size: 30px;
+}
+.contenedor_letras_erradas{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 5px;
+    height: 30px;
+    background-color: rgba(143, 114, 114, 0.395);
+    border-radius: 5px;
+}
+.letras_Erradas{
+    display: inline;
+    font-size: 25px;
+    margin-left: 2px;
+    margin-right: 2px;
+    color: rgba(188, 207, 43, 0.898);
+}
+
+
+#contenedor_letras_de_palabra_aleatoria{
+    height: 40px;
+    border-radius: 5px;
+    background-color: #50342978;
+    color: white ;
+}
+/*Ganaste*/
+.Span_GANASTE{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #112846b5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.Span_GANASTE_conteiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    height: 50%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.367);
+}
+
+.Span_GANASTE_desactivado{
+    display: none;
+   
+}
+/*Perdiste*/
+.Span_PERDISTE{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #638bc048;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.contenedor_mensaje_Perdedor{
+    height: 20%;
+    
+}
+                                    /*caracter invalido activado*/
+.contenedor-caracter_invalido{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: .3s ease all;
+}
+.activado-caracter-invalido{
+    visibility: visible;
+    opacity: 1;
+}
+.imagen-caracter-invalido_cont{
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff6d;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px black;
+}
+.contenedor-img-X{
+    display:flex;
+    justify-content: flex-end;
+    user-select: none;
+    width: 100%;
+}
+.contenedor-caracter_invalido_cont-p{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+   
+}
+.contenedor-caracter_invalido-p{
+    font-size: 25px;
+    color: rgb(76, 25, 13);
+}
+.x-img{
+    width: 30px;
+    border-radius: 50%;
+    border: 1px solid rgb(117, 20, 20);
+    cursor: pointer;
+    user-select: none;
+    transition:  .5s ease all;
+}
+.x-img:hover{
+    box-shadow: 2px 2px 15px;
+    background-color: #b0a3a36d;
+}
+.img-error-num{
+    width: 30px;
+}
+
+.mensaje_perdedor{
+    font-size: 20px;
+    color: white;
+}
+.mensaje_perdedor{
+    text-align: center;
+}
+.palabra_secreta{
+    color: rgb(56, 200, 145);
+    font-weight: bold;
+    font-size: 25px;
+}
+.Span_PERDISTE_container{
+    width: 70%;
+    height: 50%;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.367);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.botones_Ganaste_perdiste{
+    width: 120px;
+    height: 50px;
+    background-color: #5755db ;
+    box-shadow: 2px 2px 5px #000;
+    cursor: pointer;
+    user-select: none;
+    border-radius: 15px;
+    margin: 5px;
+    border: 1px solid red;
+    transition: .5s background-color;
+    font-size: 15px;
+}
+.volver_a_jugar:hover{
+    background-color: rgb(223, 23, 23);
+}
+.volver_al_inicio:hover{
+    background-color: #00fbe6be;
+}
+.contenedor_mensaje_Ganador{
+    height: 20%;
+}
+.mensaje_ganador{
+    font-size: 30px;
+    color: rgb(0, 200, 255);
+}
+.palabra_ganador{
+    color: rgb(130, 176, 13);
+}
+.footer_contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #0d233f;
+}
+
+.footer_p{
+    color: white;
+    font-size: 20px;
+    user-select: none;
+}
+.footer_span{
+    color: rgb(108, 189, 37);
+    font-size: 25px;
+      transition: .5s color;
+    transition: .5s font-size;
+  
+}
+.footer_span:hover{
+    font-size: 40px;
+   color: rgb(247, 247, 247);
+   
+}
+.link_span{
+    text-decoration: none;
+}
+.footer_span_point{
+    color: #0d233f;
+}
+.footer_contenedor_p{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+
+.contenedor_contenedor_letras_teclado.tecladoOp{
+    opacity: 1;
+}
+.social_contenedor{
+    display: flex;
+    justify-content: space-evenly;
+    width:100%;
+}
+.logo_social{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(161, 105, 14);
+    transition: .5s ease all;
+}
+.logo_social.git{
+    border-radius: 50%;
+}
+.logo_social.git:hover{
+    background-color: white;
+    box-shadow: 2px 2px 20px white;
+}
+.logo_social.linkdin{
+   
+    border-radius: 5px;
+}
+.logo_social.linkdin:hover{
+    background-color: rgb(138, 184, 251);
+    box-shadow: 2px 2px 20px rgb(123, 189, 233);
+}
+.logo_social.mail{
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(74, 52, 52);
+}
+.cont_ingresar_palabra_p{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.logo_social.mail:hover{
+        background-color: rgb(228, 72, 72);
+        box-shadow: 2px 2px 20px rgb(249, 161, 141);
+
+    }
+    .botones_ganaste-perdiste_cont{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .contenedor_mail{
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.322);
+        top: 500px;
+        z-index: 2;
+        padding: 30px 10px;
+        border-radius: 5px;
+       width: 60%;
+        
+        transition: .5s ease all;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .h2_mail{
+        color: rgb(255, 255, 255);
+        text-align: center;
+    }
+    .mail-activado{
+        visibility: visible;
+        opacity: 1;
+    }
+    .contenedor_mail_h2{
+        background-color: rgba(207, 21, 42, 0.813);
+        border-radius: 5px;
+    }
+.mensaje_ganador{
+    text-align: center;
+    }
+    @media only screen and (max-width: 600px) {
+        .canvas_pantalla{
+            width:500px;
+             height: 300px;
+             border-radius: 5px;
+            
+        }
+        .contenedor__juego_input_letra{
+            width: 500px;
+        }
+        .contenedor_adivinanza_icono-teclado{
+            width: 500px;
+        }.contenedor_adivinanza{
+            width: 500px;
+           
+        }
+        
+        .input_ingresar_palabras{
+            padding: 50px 60px;
+        }.botones_Ganaste_perdiste.volver_a_jugar{
+            height: 40px;
+            border-radius: 5px;
+        }.botones_Ganaste_perdiste.volver_al_inicio{
+            height: 40px;
+            border-radius: 5px;
+        }.botones_ganaste-perdiste_cont{
+            margin-top: 50px;
+        }.h2_mail{
+            font-size: 20px;
+        }
+    }
+    @media only screen and (max-width: 480px) {
+        .canvas_pantalla{
+            width:400px;
+             height: 200px;
+             border-radius: 5px;
+            
+        }
+        .contenedor__juego_input_letra{
+            width: 350px;
+        }
+        .contenedor_adivinanza_icono-teclado{
+            width: 350px;
+        }.contenedor_adivinanza{
+            width: 350px;
+           
+        }.input_ingresar_palabras{
+            padding: 30px;
+            width: 80%;
+        }
+        .botones_ganaste-perdiste_cont{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }.mensaje_ganador{
+            font-size: 25px;
+            text-align: center;
+        }
+.h2_mail{
+    font-size: 17px;
+}
+    }
+    @media only screen and (max-width: 400px) {
+        .canvas_pantalla{
+            width:400px;
+             height: 200px;
+             border-radius: 5px;
+            
+        }
+        .contenedor__juego_input_letra{
+            width: 350px;
+        }
+        .contenedor_adivinanza_icono-teclado{
+            width: 350px;
+        }.contenedor_adivinanza{
+            width: 350px;
+           
+        }.footer_p{
+           
+            font-size: 15px;
+          
+        }
+        .footer_span{
+            font-size: 20px;
+          
+        }.mensaje_ganador{
+            margin-bottom: 20px;
+        }.botones_ganaste-perdiste_cont{
+            margin-top: 70px;
+        }
+
+    }
+    @media only screen and (max-width: 380px) {
+        .canvas_pantalla{
+            width:350px;
+             height: 180px;
+             border-radius: 5px;
+            
+        }
+        .contenedor__juego_input_letra{
+            width: 350px;
+        }
+        .contenedor_adivinanza_icono-teclado{
+            width: 350px;
+        }.contenedor_adivinanza{
+            width: 350px;
+           
+        }
+        .contenedor_botones_juego{
+            width: 350px;
+        }
+        .boton_desistir{
+            width: 150px;
+        }
+        .boton_volverAJugar{
+            width: 150px;
+        }.h2_mail{
+            font-size: 15px;
+        }
+        
+    }
